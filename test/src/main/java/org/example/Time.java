@@ -1,11 +1,14 @@
 package org.example;
 
 import java.util.Scanner;
-public class Main {
+public class Time implements TimeIF {
 
-        private static int std1,std2, mint1, mint2;
+    static int std1;
+    static int std2;
+    static int mint1;
+    static int mint2;
 
-        public static void main (String [] args){
+        public  void main (String [] args){
 
             Scanner scanner = new Scanner(System.in);
             System.out.print("geben Sie was ein");
@@ -19,14 +22,14 @@ public class Main {
             String [] erg = zeit(std1, mint1);
             System.out.println(erg[0] + erg[1] + erg[2]);
 
-            Main m1 = new Main();
-            Main m2 = new Main();
+            Time m1 = new Time();
+            Time m2 = new Time();
 
             String [] ergadd= zeitaddieren(m1, m2);
             System.out.print(ergadd[0] + ergadd[1]+ ergadd[2]);
         }
 
-        public static String [] zeit(int std, int mint) {
+        public String [] zeit(int std, int mint) {
             String std2 = Integer.toString(std);
             String mint2=  Integer.toString(mint);
             String [] res =new String[3];
@@ -36,7 +39,7 @@ public class Main {
             return res;
         }
 
-        public static String [] zeitaddieren (Main m1, Main m2){
+        public String [] zeitaddieren (Time m1, Time m2){
 
 
             int new_std = m1.std1 + m1.std2;
